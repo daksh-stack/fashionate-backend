@@ -10,21 +10,11 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
-const allowedOrigins = [
-    "http://localhost:5173",
-    "https://fashionate-frontend.vercel.app"
-]
 
 app.use(cookieParser())
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
+  origin: "https://fashionate-frontend.vercel.app",
+  credentials: true // if using cookies/auth
 }));
 
 app.use(express.json({ limit: "5mb" }))
