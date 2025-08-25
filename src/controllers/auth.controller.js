@@ -1,4 +1,4 @@
-import User from "../Models/user.model.js"
+import User from "../models/user.model.js"
 import bcrypt from "bcryptjs"
 import { generateTokens } from "../lib/util.js"
 
